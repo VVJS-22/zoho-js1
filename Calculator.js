@@ -13,8 +13,10 @@ export class Calculator {
             }
             if (!["0", "."].includes(btn.innerText)) {
                 if (last.match(/^0$/)) {
-                    splitted[splitted.length - 1] = btn.innerText
-                    return display.value = splitted.join("")
+                    if (btn.innerText.match(/[1-9]/)) {
+                        splitted[splitted.length - 1] = btn.innerText
+                        return display.value = splitted.join("")
+                    }
                 }
             }
             if (btn.innerText === ".") {
@@ -62,6 +64,12 @@ export class Calculator {
     clear(display) {
         document.querySelector(".error").classList.add("hide");
         display.value = ""
+    }
+
+    back(display) {
+        if (display.value) {
+            display.value = display.value.substring(0, display.value.length - 1)
+        }
     }
 
     execute(display) {

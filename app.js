@@ -6,6 +6,7 @@ console.log(calculator)
 
 const buttons = Array.from(document.getElementsByTagName("button"))
 const display = document.querySelector(".display")
+const back = document.querySelector(".back")
 
 buttons.map(btn => {
     btn.addEventListener("click" , () => {
@@ -22,4 +23,10 @@ buttons.map(btn => {
         }
     })
 });
+
+back.addEventListener("click", () => {
+    calculator.back(display);
+})
+
+
 
