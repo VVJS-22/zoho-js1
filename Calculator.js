@@ -74,8 +74,10 @@ export class Calculator {
 
     execute(display) {
         try {
-            let expression = display.value.replaceAll("^", "**")
-            display.value = new Function(`return ${expression}`)();
+            if (display.value !== "") {
+                let expression = display.value.replaceAll("^", "**")
+                display.value = new Function(`return ${expression}`)();
+            }
         } catch (error) {
             console.log(error)
             document.querySelector(".error").classList.remove("hide");
