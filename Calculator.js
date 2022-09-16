@@ -30,6 +30,11 @@ export class Calculator {
             }
             if (btn.innerText.match(/[-+*^\/]/)) {
                 if (last === "") {
+                    if (splitted[splitted.length - 2] === "-" && splitted[splitted.length - 3] === "" && splitted[splitted.length - 4].match(/[-+*^\/]/)) {
+                        splitted[splitted.length - 4] = btn.innerText
+                        const splitSlice = splitted.slice(0, splitted.length - 3);
+                        return display.value = splitSlice.join("");
+                    }
                     if (display.value !== "" && display.value !== "-" && btn.innerText !== "-") {
                         if (splitted[splitted.length - 2] === btn.innerText) {
                             return false;
