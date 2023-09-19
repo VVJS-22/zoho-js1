@@ -1,4 +1,4 @@
-# [Live Demo](https://zoho-js1.netlify.app target="_blank"))
+# [Live Demo](https://zoho-js1.netlify.app))
 
 ### How to run
 
